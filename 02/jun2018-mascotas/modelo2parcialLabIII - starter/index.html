@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="background-color:powderblue">
+
+        <h1 >ABM Mascotas</h1>
+        <hr>    
+
+            <br>
+            <div>
+                <label for="txtId">Id: </label>
+                <div >
+                    <input type="text" name="" id="txtId">
+                </div>
+            </div>
+
+            <div>
+                <label for="txtNombre" >Nombre:</label>
+                <div >
+                    <input type="text" name="" id="txtNombre">
+                </div>
+            </div>
+
+
+            <div>
+                <label for="">Edad: </label>
+                <div>
+                    <input type="text" name="" id="txtEdad">
+                </div>
+            </div>
+            <br>
+            <div>
+
+                <label for="">Tipo: </label>
+                <div>
+                    <select name="" id="selectTipo">
+                        <option value="0">Perro</option>
+                        <option value="1">Gato</option>
+                        <option value="2">Reptil</option>
+                        <option value="3">Roedor</option>
+                        <option value="3">Ave</option>
+                        <option value="4">Pez</option>
+                    </select>
+                </div>
+
+                <label for="">Cantidad Patas: </label>
+                <div>
+                    <input type="number" min="0" max="4" name="" id="txtPatas">
+                </div>
+
+            </div>
+            <br>
+            <div>
+
+                <div>
+                    <button id="btnAgregar" onclick="agregarMascota()">Agregar</button>
+                </div>
+                <div>
+                    <button id="btnModificar">Modificar</button>
+                </div>
+                <div>
+                    <button id="btnEliminar">Eliminar</button>
+                </div>
+                <div>
+                    <button id="btnClearStorage" onclick="cleanStorage()">Limpiar LocalStorage</button>
+                </div>
+
+            </div>
+
+            <hr>
+            <h2>Filtros</h2>
+            <hr>
+
+            <div>
+
+                <label for="cmbFiltro">Filtrar por:</label>
+                <div>
+                    <select name="" id="cmbFiltro"></select>
+                </div>
+
+                <label for="txtPromedio">Promedio de edad:</label>
+                <div>
+                    <input type="text" id="txtPromedio" style="width:50px">
+                </div>
+                <div>
+                    <button onclick="calcularPromedio()">Calcular Promedio</button>
+                </div>
+            </div>
+            <br>
+
+            <h3>Campos mostrados
+                <small>Tildar los campos a mostrar</small>
+            </h3>
+            <hr>
+            <div >
+                <input type="checkbox" id="chkId" checked>
+                <label for="chkId"> Id </label>
+            </div>
+            <div >
+                <input type="checkbox" id="chkName"  checked>
+                <label for="chkName" > Nombre </label>
+            </div>
+            <div >
+                <input type="checkbox" id="chkEdad"  checked>
+                <label for="chkEdad" > Edad: </label>
+            </div>
+            <div >
+                <input type="checkbox" id="chkPatas"  checked>
+                <label for="chkPatas" > Patas </label>
+            </div>
+
+            <hr>
+            <h2 >Lista de Mascotas</h2>
+            <hr>
+
+            <div id="divTabla" >
+
+            </div>
+
+    
+
+    </div>
+
+</body>
+
+</html>

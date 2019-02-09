@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/controlador.js"></script>
+    <script src="./scripts/index.js"></script>
+    <title>ABM SuperHeroes</title>
+</head>
+
+<body>
+    <header>
+        <div id="contenido">
+            <div id="logo">
+                <img src="./images/Superheroes-shadow-background-image_Grey.jpg" alt="logo superheroes" id="logo1">
+                <img src="./images/logoSuperHeroes.png" alt="logo superheroes" id="logo2">
+            </div>
+            <div id="agregar">
+                <button id="btnAlta">Agregar</button>
+            </div>
+            <div class="formAlta hidden" id="formAlta">
+                <div id="frmContainer">
+                    <div id="frmAlta">
+                        <div>
+                            <label class="labelForm" for="altaId">Id:</label>
+                            <input class="floatLeft" id="altaId" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="altaNombre">Nombre:</label>
+                            <input class="floatLeft" id="altaNombre" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="altaApellido">Apellido:</label>
+                            <input class="floatLeft" id="altaApellido" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="altaAlias">Alias:</label>
+                            <input class="floatLeft" id="altaAlias" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="altaEdad">Edad:</label>
+                            <input class="floatLeft" id="altaEdad" type="text">
+                        </div>
+                        <div>
+                            <input type="radio" name="lado" id="heroeEdit" value="heroe" >
+                            <label class="inline red" for="heroe">Heroe</label>
+                            <input type="radio" name="lado" id="villanoEdit" value="villano" >
+                            <label class="inline red" for="villano"> Villano</label>
+                        </div>
+                        <div>
+                            <button id="btnAcceptAlta">Dar de Alta</button>
+                            <button id="btnCancelAlta">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formAlta hidden" id="formEdit">
+                <div id="frmContainerEdit">
+                    <div id="frmEdit">
+                        <div>
+                            <label class="labelForm" for="editId">Id:</label>
+                            <input class="floatLeft" id="editId" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="editNombre">Nombre:</label>
+                            <input class="floatLeft" id="editNombre" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="editApellido">Apellido:</label>
+                            <input class="floatLeft" id="editApellido" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="editAlias">Alias:</label>
+                            <input class="floatLeft" id="editAlias" type="text">
+                        </div>
+                        <div>
+                            <label class="labelForm" for="editEdad">Edad:</label>
+                            <input class="floatLeft" id="editEdad" type="text">
+                        </div>
+                        <div>
+                            <input type="radio" name="lado" id="editHeroe" value="heroe">
+                            <label class="inline red" for="editHeroe">Heroe</label>
+                            <input type="radio" name="lado" id="editVillano" value="villano">
+                            <label class="inline red" for="editVillano"> Villano</label>
+                        </div>
+                        <div>
+                            <button id="btnEdit">Editar</button>
+                            <button id="btnEliminar">Eliminar</button>
+                            <button id="btnCancelar">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contenedor">
+        <table id="tabla" class="tableHeroes animated">
+            <thead class="bg-blue">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Alias</th>
+                    <th>Edad</th>
+                    <th>Lado</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+        <img id="spinner" src="./images/spinner.gif" alt="cargando">
+    </div>
+</body>
+
+</html>
