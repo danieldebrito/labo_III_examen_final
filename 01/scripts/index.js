@@ -18,15 +18,15 @@ function asignarEventos() {
         ejecutarTransaccion("Alta");
     }
 
-    btnEdit.onclick = function (){
+    btnEdit.onclick = function () {
         ejecutarTransaccion("Modificacion");
     }
 
-    btnEliminar.onclick = function (){
+    btnEliminar.onclick = function () {
         ejecutarTransaccion("Baja");
     }
 
-    btnCancelar.onclick = function(){
+    btnCancelar.onclick = function () {
         cerrarEditar();
     }
 
@@ -49,7 +49,7 @@ function Personaje(id, nombre, apellido, alias, edad, lado) {
 
 function traerIdHeroe(e) {
 
-    //Este manejador de evento se ejecutra cuando se hace click en la grilla dinamica.
+    //Este manejador de evento se ejecuta cuando se hace click en la grilla dinamica.
     //Propuesta: 1)Busco en el DOM el id del personaje a eliminar
 
     //2)Me traigo el heroe de la lista, haciendo una funcion de buscar, como por ejemplo:
@@ -76,22 +76,22 @@ function altaPersonaje() {
         lado = villano.value;
     }
 
-    
+
     var repetido = false;
-    lista.forEach(function(element) {
-        if(element.id === id){
+    lista.forEach(function (element) {
+        if (element.id === id) {
             repetido = true;
         }
     });
 
-    if(repetido){
+    if (repetido) {
         alert("El ID ingresado ya existe.");
-    }else{
+    } else {
         var nuevoPersonaje = new Personaje(id, nombre, apellido, alias, edad, lado);
         ejecutarTransaccion("Insertar", nuevoPersonaje);
         ejecutarTransaccion("Cerrar");
     }
-    
+
 }
 
 function eliminarPersonaje() {
@@ -107,10 +107,10 @@ function eliminarPersonaje() {
 
 }
 
-function buscarHeroe(lista, id){
+function buscarHeroe(lista, id) {
     var heroe;
-    lista.forEach(function(element) {
-        if(element.id === id){
+    lista.forEach(function (element) {
+        if (element.id === id) {
             heroe = element;
         }
     });
@@ -149,10 +149,10 @@ function traerListaHeroes(callback) {
 
     $.ajax({
         url: 'http://localhost:3000/traer?collection=heroes',
-        beforeSend: function() {
+        beforeSend: function () {
             $("#spinner").show();
         },
-        complete: function() {
+        complete: function () {
             $("#spinner").hide();
         },
         success: function (result) {
@@ -225,10 +225,10 @@ function modificarHeroe(heroe) {
             alert(xhr.status + ", " + thrownError);
         },
     });
-    
+
 }
 
-function cerrarEditar(){
+function cerrarEditar() {
     var frmEdit = document.getElementById("formEdit");
     frmEdit.classList.remove("visible");
     frmEdit.classList.add("hidden");
@@ -247,7 +247,7 @@ function addRowHandlers() {
         var currentRow = table.rows[i];
         var createClickHandler = function (row) {
             return function () {
-                
+
                 var id = row.getElementsByTagName("td")[0].innerHTML;
                 var nombre = row.getElementsByTagName("td")[1].innerHTML;
                 var apellido = row.getElementsByTagName("td")[2].innerHTML;
@@ -262,14 +262,14 @@ function addRowHandlers() {
                 document.getElementById('editApellido').value = apellido;
                 document.getElementById('editAlias').value = alias;
                 document.getElementById('editEdad').value = edad;
-                if(lado == "Heroe" || lado == "heroe"){
+                if (lado == "Heroe" || lado == "heroe") {
                     heroe = document.getElementById("editHeroe");
-                    heroe.setAttribute("checked",true);
-                }else{
+                    heroe.setAttribute("checked", true);
+                } else {
                     villano = document.getElementById("editVillano");
-                    villano.setAttribute("checked",true);
+                    villano.setAttribute("checked", true);
                 }
-                
+
             };
         };
         currentRow.onclick = createClickHandler(currentRow);
